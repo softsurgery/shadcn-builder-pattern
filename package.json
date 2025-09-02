@@ -1,11 +1,11 @@
 {
   "name": "shadcn-builder-patterns",
-  "version": "1.0.1",
+  "version": "1.0.2-beta.2",
   "description": "Shadcn builder patterns",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "tsc && babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -37,6 +37,8 @@
   "devDependencies": {
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "tsc-alias": "^1.8.16",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2"
   }
 }

@@ -14,7 +14,6 @@ import { Calendar as CalendarIcon, X } from "lucide-react";
 import { enUS, fr } from "date-fns/locale";
 import { Button } from "./button";
 import { Skeleton } from "./skeleton";
-import { cn } from "../lib/cn";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import {
   Select,
@@ -24,6 +23,7 @@ import {
   SelectValue,
 } from "./select";
 import { Calendar } from "./calendar";
+import { cn } from "@/lib/cn";
 
 function getLocalizedMonths(locale: Locale) {
   const months = eachMonthOfInterval({

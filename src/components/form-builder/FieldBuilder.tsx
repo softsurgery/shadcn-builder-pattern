@@ -1,6 +1,4 @@
-"use client";
-
-import { Field, FieldVariant } from "../../types/form-builder.types";
+import { Field, FieldVariant } from "@/types/form-builder.types";
 import BasicPlugin from "./plugins/basic";
 
 interface FieldBuilderProps {
