@@ -1,8 +1,8 @@
-import { cn } from "../lib/cn";
-import { Label } from "../ui/label";
-import { Separator } from "../ui/separator";
+import { cn } from "../../lib/cn";
+import { Label } from "../../ui/label";
+import { Separator } from "../../ui/separator";
 import { FieldBuilder } from "./FieldBuilder";
-import { FieldVariant, FormStructure } from "./types";
+import { FieldVariant, FormStructure } from "../../types/form-builder.types";
 
 interface FormBuilderProps {
   className?: string;

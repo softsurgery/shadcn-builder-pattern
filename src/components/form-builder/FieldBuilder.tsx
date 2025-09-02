@@ -3,22 +3,22 @@
 import React from "react";
 import { CheckedState } from "@radix-ui/react-checkbox";
 import { Eye, EyeOff } from "lucide-react";
-import { Field, SelectOption } from "./types";
-import { cn } from "../lib/cn";
-import { Input } from "../ui/input";
+import { Field, SelectOption } from "../../types/form-builder.types";
+import { cn } from "../../lib/cn";
+import { Input } from "../../ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { DatePicker } from "../ui/date-picker";
-import { Checkbox } from "../ui/checkbox";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
-import { Switch } from "../ui/switch";
-import { Textarea } from "../ui/textarea";
+} from "../../ui/select";
+import { DatePicker } from "../../ui/date-picker";
+import { Checkbox } from "../../ui/checkbox";
+import { Label } from "../../ui/label";
+import { Button } from "../../ui/button";
+import { Switch } from "../../ui/switch";
+import { Textarea } from "../../ui/textarea";
 
 interface FieldBuilderProps {
   field?: Field<any>;
