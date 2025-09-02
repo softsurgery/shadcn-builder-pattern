@@ -21,6 +21,7 @@ export interface FieldsetRow {
 }
 
 export enum FieldVariant {
+  //basic
   TEXT = "text",
   EMAIL = "email",
   TEL = "tel",
@@ -28,15 +29,14 @@ export enum FieldVariant {
   PASSWORD = "password",
   DATE = "date",
   SELECT = "select",
-  MULTI_SELECT = "multi_select",
   CHECKBOX = "checkbox",
-  CHECK = "check",
   RADIO = "radio",
   SWITCH = "switch",
   TEXTAREA = "textarea",
   IMAGE = "image",
   EMPTY = "empty",
   CUSTOM = "custom",
+  MULTI_SELECT = "multi_select",
 }
 
 export interface Field<T = any> {

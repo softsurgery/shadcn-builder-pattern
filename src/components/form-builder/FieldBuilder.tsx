@@ -14,7 +14,6 @@ export const FieldBuilder = ({ field }: FieldBuilderProps) => {
       "number",
       "select",
       "date",
-      "check",
       "password",
       "switch",
       "textarea",

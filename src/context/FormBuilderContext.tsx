@@ -1,13 +1,22 @@
+import {
+  CheckboxFieldProps,
+  DateFieldProps,
+  PasswordFieldProps,
+  SelectFieldProps,
+  SwitchFieldProps,
+  TextareaFieldProps,
+  TextFieldProps,
+} from "@/types/form-builder.types";
 import { createContext, useContext, ReactNode, ComponentType } from "react";
 
 type BuilderComponents = {
-  Input?: ComponentType<any>;
-  Select?: ComponentType<any>;
-  DatePicker?: ComponentType<any>;
-  Checkbox?: ComponentType<any>;
-  Password?: ComponentType<any>;
-  Switch?: ComponentType<any>;
-  Textarea?: ComponentType<any>;
+  Input?: (props: TextFieldProps) => React.JSX.Element;
+  Select?: (props: SelectFieldProps) => React.JSX.Element;
+  DatePicker?: (props: DateFieldProps) => React.JSX.Element;
+  Checkbox?: (props: CheckboxFieldProps) => React.JSX.Element;
+  Password?: (props: PasswordFieldProps) => React.JSX.Element;
+  Switch?: (props: SwitchFieldProps) => React.JSX.Element;
+  Textarea?: (props: TextareaFieldProps) => React.JSX.Element;
 };
 
 const BuilderComponentsContext = createContext<BuilderComponents>({});
