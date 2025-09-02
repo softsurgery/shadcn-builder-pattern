@@ -87,15 +87,10 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
                         >
                           <div className="flex flex-row justify-between items-center">
                             <Label
-                              className={cn(
-                                "text-xs font-semibold",
-                                field.variant === "check" && "invisible"
-                              )}
-                              htmlFor={field.label}
+                              className={cn("text-xs font-semibold")}
+                              htmlFor={field.id}
                             >
-                              {field.variant !== "check"
-                                ? field.label || "\u00A0"
-                                : "\u00A0"}
+                              {field.label}
                             </Label>
                           </div>
 

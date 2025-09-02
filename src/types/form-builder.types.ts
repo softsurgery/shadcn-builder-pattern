@@ -58,22 +58,22 @@ export interface BaseFieldProps {
 }
 
 export interface TextFieldProps extends BaseFieldProps {
-  value?: string | null;
+  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface EmailFieldProps extends BaseFieldProps {
-  value?: string | null;
+  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface TelFieldProps extends BaseFieldProps {
-  value?: string | null;
+  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface NumberFieldProps extends BaseFieldProps {
-  value?: string | null;
+  value?: number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   min?: number;
   max?: number;
