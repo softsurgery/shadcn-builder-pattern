@@ -43,6 +43,7 @@ interface DatePickerProps {
   endYear?: number;
   nullable?: boolean;
   disabled?: boolean;
+  placeholder?: string;
   isPending?: boolean;
 }
 export function DatePicker({
@@ -54,6 +55,7 @@ export function DatePicker({
   endYear = getYear(new Date()) + 100,
   nullable = false,
   disabled = false,
+  placeholder,
   isPending,
 }: DatePickerProps) {
   const i18n = { language: "en" };
@@ -112,7 +114,7 @@ export function DatePicker({
                 ? format(date, "PPP", {
                     locale: i18n.language == "fr" ? fr : enUS,
                   })
-                : "Pick a date..."}
+                : placeholder || "Pick a date..."}
             </span>
           </Button>
         </PopoverTrigger>
