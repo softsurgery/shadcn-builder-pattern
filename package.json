@@ -1,6 +1,6 @@
 {
   "name": "shadcn-builder-patterns",
-  "version": "1.0.3-beta.7",
+  "version": "1.0.4",
   "description": "Shadcn builder patterns",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
