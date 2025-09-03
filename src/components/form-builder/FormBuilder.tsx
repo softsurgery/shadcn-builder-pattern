@@ -63,7 +63,7 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
                           !!field.props?.hidden ? "hidden" : "block"
                         )}
                       >
-                        <div className="flex flex-row justify-between items-center">
+                        <div className="flex flex-row justify-between items-center mb-1">
                           <Label
                             className={cn("text-xs font-semibold")}
                             htmlFor={field.id}
@@ -73,7 +73,7 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
                         </div>
 
                         <FieldBuilder field={field} />
-                        <div className="flex justify-between items-center gap-2">
+                        <div className="flex justify-between items-center gap-2 mt-1">
                           {field.variant !== FieldVariant.SWITCH &&
                             !field.error && (
                               <span className="font-medium text-xs opacity-70 leading-3">
