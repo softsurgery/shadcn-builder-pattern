@@ -1,6 +1,7 @@
 import {
   CheckboxFieldProps,
   DateFieldProps,
+  Field,
   PasswordFieldProps,
   SelectFieldProps,
   SwitchFieldProps,
@@ -10,13 +11,13 @@ import {
 import { createContext, useContext, ReactNode, ComponentType } from "react";
 
 type BuilderComponents = {
-  Input?: (props: TextFieldProps) => React.JSX.Element;
-  Select?: (props: SelectFieldProps) => React.JSX.Element;
-  DatePicker?: (props: DateFieldProps) => React.JSX.Element;
-  Checkbox?: (props: CheckboxFieldProps) => React.JSX.Element;
-  Password?: (props: PasswordFieldProps) => React.JSX.Element;
-  Switch?: (props: SwitchFieldProps) => React.JSX.Element;
-  Textarea?: (props: TextareaFieldProps) => React.JSX.Element;
+  Input?: (field: Field<TextFieldProps>) => React.JSX.Element;
+  Select?: (field: Field<SelectFieldProps>) => React.JSX.Element;
+  DatePicker?: (field: Field<DateFieldProps>) => React.JSX.Element;
+  Checkbox?: (field: Field<CheckboxFieldProps>) => React.JSX.Element;
+  Password?: (field: Field<PasswordFieldProps>) => React.JSX.Element;
+  Switch?: (field: Field<SwitchFieldProps>) => React.JSX.Element;
+  Textarea?: (field: Field<TextareaFieldProps>) => React.JSX.Element;
 };
 
 const BuilderComponentsContext = createContext<BuilderComponents>({});
