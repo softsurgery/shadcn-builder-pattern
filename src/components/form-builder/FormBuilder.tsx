@@ -1,9 +1,7 @@
 import { FieldBuilder } from "./FieldBuilder";
 import { FieldVariant, FormStructure } from "@/types/form-builder.types";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/cn";
 import { Label } from "@/components/ui/label";
-import { useBuilderComponents } from "@/context/FormBuilderContext";
 
 interface FormBuilderProps {
   className?: string;
@@ -16,18 +14,6 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
 }: FormBuilderProps) => {
   return (
     <div className={cn("flex flex-col w-full", className)}>
-      {!!structure?.includeHeader && (
-        <div>
-          <div className="space-y-1 py-5 sm:py-0">
-            <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-              {structure.title}
-            </h1>
-            <p className="text-muted-foreground">{structure.description}</p>
-          </div>
-          <Separator className="mt-2 mb-4 lg:mb-6" />
-        </div>
-      )}
-
       <form
         className={cn(
           "flex gap-4 xl:gap-10",
@@ -49,13 +35,6 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
                 : "flex-col gap-4"
             )}
           >
-            {fieldset.includeHeader && (
-              <div className="flex flex-col gap-2">
-                <h2 className="text-lg font-semibold">{fieldset.title}</h2>
-                <Separator />
-              </div>
-            )}
-
             {fieldset?.rows?.map((row, index) => {
               const fieldCount = row.fields.length;
 
@@ -76,40 +55,39 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
                   )}
                 >
                   {row.fields.map((field) => {
-                    if (!field.hidden)
-                      return (
-                        <div
-                          key={field.id}
-                          className={cn(
-                            "flex flex-col gap-2 w-full",
-                            field.containerClassName
-                          )}
-                        >
-                          <div className="flex flex-row justify-between items-center">
-                            <Label
-                              className={cn("text-xs font-semibold")}
-                              htmlFor={field.id}
-                            >
-                              {field.label}
-                            </Label>
-                          </div>
+                    return (
+                      <div
+                        key={field.id}
+                        className={cn(
+                          "flex flex-col gap-2 w-full",
+                          !!field.props?.hidden ? "hidden" : "block"
+                        )}
+                      >
+                        <div className="flex flex-row justify-between items-center">
+                          <Label
+                            className={cn("text-xs font-semibold")}
+                            htmlFor={field.id}
+                          >
+                            {field.label}
+                          </Label>
+                        </div>
 
-                          <FieldBuilder field={field} />
-                          <div className="flex justify-between items-center gap-2">
-                            {field.variant !== FieldVariant.SWITCH &&
-                              !field.error && (
-                                <span className="font-medium text-xs opacity-70 leading-3">
-                                  {field.description}
-                                </span>
-                              )}
-                            {field?.error && (
-                              <span className="font-medium text-xs text-red-500 leading-3">
-                                {field?.error}
+                        <FieldBuilder field={field} />
+                        <div className="flex justify-between items-center gap-2">
+                          {field.variant !== FieldVariant.SWITCH &&
+                            !field.error && (
+                              <span className="font-medium text-xs opacity-70 leading-3">
+                                {field.description}
                               </span>
                             )}
-                          </div>
+                          {field?.error && (
+                            <span className="font-medium text-xs text-red-500 leading-3">
+                              {field?.error}
+                            </span>
+                          )}
                         </div>
-                      );
+                      </div>
+                    );
                   })}
                 </div>
               );

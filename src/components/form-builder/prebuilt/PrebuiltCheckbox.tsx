@@ -1,16 +1,16 @@
-interface CheckboxPrebuiltProps {
+interface PrebuiltCheckboxProps {
   id: string;
   className?: string;
   checked?: boolean;
   onCheckedChange?: (value: boolean) => void;
 }
 
-export const CheckboxPrebuilt: React.FC<CheckboxPrebuiltProps> = ({
+export const PrebuiltCheckbox: React.FC<PrebuiltCheckboxProps> = ({
   id,
   className,
   checked,
   onCheckedChange,
-}: CheckboxPrebuiltProps) => {
+}: PrebuiltCheckboxProps) => {
   return (
     <div className={className}>
       <input

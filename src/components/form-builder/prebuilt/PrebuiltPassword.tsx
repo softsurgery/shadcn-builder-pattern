@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 import { Eye, EyeOff } from "lucide-react";
 
 //@ts-ignore
-interface PasswordPrebuiltProps extends React.ComponentProps<"input"> {
+interface PrebuiltPasswordProps extends React.ComponentProps<"input"> {
   className?: string;
   value?: string;
   onChange?: (value: string) => void;
@@ -15,7 +15,7 @@ interface PasswordPrebuiltProps extends React.ComponentProps<"input"> {
   autoComplete?: string;
 }
 
-export const PasswordPrebuilt = ({
+export const PrebuiltPassword = ({
   className,
   value,
   onChange,
@@ -24,7 +24,7 @@ export const PasswordPrebuilt = ({
   error,
   autoComplete = "new-password",
   ...props
-}: PasswordPrebuiltProps) => {
+}: PrebuiltPasswordProps) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   return (

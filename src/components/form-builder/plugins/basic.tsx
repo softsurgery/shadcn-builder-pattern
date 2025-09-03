@@ -7,9 +7,9 @@ import { DatePicker as DatePickerFallback } from "@/components/ui/date-picker";
 import { Switch as SwitchFallback } from "@/components/ui/switch";
 import { Textarea as TextareaFallback } from "@/components/ui/textarea";
 
-import { SelectPrebuilt } from "../prebuilt/SelectPrebuilt";
-import { PasswordPrebuilt } from "../prebuilt/PasswordPrebuilt";
-import { CheckboxPrebuilt } from "../prebuilt/CheckboxPrebuilt";
+import { PrebuiltSelect } from "../prebuilt/PrebuiltSelect";
+import { PrebuiltPassword } from "../prebuilt/PrebuiltPassword";
+import { PrebuiltCheckbox } from "../prebuilt/PrebuiltCheckbox";
 
 interface BasicPluginProps {
   field?: Field;
@@ -21,18 +21,12 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
   const pluginRegistry: Record<string, (field: Field) => React.JSX.Element> = {
     text: (field) =>
       Input ? (
-        <Input
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Input {...field.props} id={field.id} className={field.className} />
       ) : (
         <InputFallback
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     email: (field) =>
@@ -42,7 +36,6 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
           type="email"
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ) : (
         <InputFallback
@@ -50,7 +43,6 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
           type="email"
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     number: (field) =>
@@ -60,7 +52,6 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
           type="number"
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ) : (
         <InputFallback
@@ -68,39 +59,26 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
           type="number"
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     password: (field) =>
       Password ? (
-        <Password
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Password {...field.props} id={field.id} className={field.className} />
       ) : (
-        <PasswordPrebuilt
+        <PrebuiltPassword
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     select: (field) =>
       Select ? (
-        <Select
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Select {...field.props} id={field.id} className={field.className} />
       ) : (
-        <SelectPrebuilt
+        <PrebuiltSelect
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     date: (field) =>
@@ -109,62 +87,42 @@ export default function BasicPlugin({ field }: BasicPluginProps) {
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ) : (
         <DatePickerFallback
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     switch: (field) =>
       Switch ? (
-        <Switch
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Switch {...field.props} id={field.id} className={field.className} />
       ) : (
         <SwitchFallback
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     checkbox: (field) =>
       Checkbox ? (
-        <Checkbox
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Checkbox {...field.props} id={field.id} className={field.className} />
       ) : (
-        <CheckboxPrebuilt
+        <PrebuiltCheckbox
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     textarea: (field) =>
       Textarea ? (
-        <Textarea
-          {...field.props}
-          id={field.id}
-          className={field.className}
-          placeholder={field.placeholder}
-        />
+        <Textarea {...field.props} id={field.id} className={field.className} />
       ) : (
         <TextareaFallback
           {...field.props}
           id={field.id}
           className={field.className}
-          placeholder={field.placeholder}
         />
       ),
     custom: (field) => (

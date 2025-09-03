@@ -4,14 +4,12 @@ export interface FormStructure {
   title?: string;
   description?: string;
   orientation?: "vertical" | "horizontal";
-  includeHeader?: boolean;
   fieldsets: Fieldset[];
 }
 
 export interface Fieldset {
   title?: string;
   description?: string;
-  includeHeader?: boolean;
   rows: FieldsetRow[];
 }
 
@@ -43,18 +41,17 @@ export interface Field<T = any> {
   id: string;
   label?: string;
   className?: string;
-  containerClassName?: string;
   variant: FieldVariant;
   required?: boolean;
   description?: string;
-  placeholder?: string;
-  hidden?: boolean;
   error?: string;
   props?: T;
 }
 
 export interface BaseFieldProps {
   disabled?: boolean;
+  placeholder?: string;
+  hidden?: boolean;
 }
 
 export interface TextFieldProps extends BaseFieldProps {

@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/cn";
 import { SelectOption } from "@/types/form-builder.types";
 
-interface SelectPrebuiltProps
+interface PrebuiltSelectProps
   extends React.ComponentProps<typeof SelectPrimitive.Root> {
   id?: string;
   classNames?: {
@@ -27,7 +27,7 @@ interface SelectPrebuiltProps
   error?: string;
 }
 
-export const SelectPrebuilt = ({
+export const PrebuiltSelect = ({
   classNames,
   id,
   value,
@@ -38,7 +38,7 @@ export const SelectPrebuilt = ({
   disabled,
   error,
   ...props
-}: SelectPrebuiltProps) => {
+}: PrebuiltSelectProps) => {
   return (
     <Select
       {...props}
